@@ -40,18 +40,22 @@
   }
   .popup-btn:hover { background: #1a252f; }
 
+  /* CURSORES */
+  body { cursor: url('img/cat_bride.png') 16 16, auto; }
+  body.cursor-right { cursor: url('img/gorilla_groom.png') 16 16, auto; }
+
   /* HERO */
   #hero {
     position: relative;
     height: 65vh;
     min-height: 400px;
-    background: url('img/HeroBanner.jpeg') center 30% / cover no-repeat;
+    background: url('img/HeroBanner.jpeg') center bottom / cover no-repeat;
     display: flex; align-items: center; justify-content: center; overflow: hidden;
   }
   @media (max-width: 768px) {
     #hero {
       height: 100vh;
-      background: url('img/HeroBanner.jpeg') center 30% / 180% auto no-repeat;
+      background: url('img/HeroBanner.jpeg') center bottom / 180% auto no-repeat;
     }
   }
   .hero-overlay { position: absolute; inset: 0; background: rgba(20,12,5,0.48); }
@@ -324,6 +328,11 @@
 </button>
 
 <script>
+  // CURSOR
+  document.addEventListener('mousemove', e => {
+    document.body.classList.toggle('cursor-right', e.clientX > window.innerWidth / 2);
+  });
+
   // CUENTA ATRÁS
   function updateCountdown() {
     const diff = new Date('2026-08-29T12:30:00') - new Date();
@@ -357,3 +366,4 @@
 </script>
 </body>
 </html>
+
