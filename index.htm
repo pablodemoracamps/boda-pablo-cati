@@ -43,25 +43,22 @@
 
   /* HERO */
   #hero {
-    position: relative; height: 100vh; min-height: 500px;
-    background: linear-gradient(165deg, #c9b99a 0%, #8a7560 40%, #4a3728 100%);
+    position: relative;
+    height: 50vh;
+    min-height: 320px;
+    background: url('img/HeroBanner.jpeg') center/cover no-repeat;
     display: flex; align-items: center; justify-content: center; overflow: hidden;
   }
-  .hero-bg-pattern {
-    position: absolute; inset: 0; opacity: 0.08;
-    background-image: radial-gradient(circle at 20% 50%, #fff 1px, transparent 1px),
-      radial-gradient(circle at 80% 20%, #fff 1px, transparent 1px),
-      radial-gradient(circle at 60% 80%, #fff 1px, transparent 1px);
-    background-size: 60px 60px;
-  }
+  @media (max-width: 768px) { #hero { height: 100vh; } }
+  .hero-overlay { position: absolute; inset: 0; background: rgba(30,20,10,0.45); }
   .hero-content { position: relative; text-align: center; color: #fff; padding: 20px; }
-  .hero-eyebrow { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; opacity: 0.7; margin-bottom: 24px; }
-  .hero-names { font-family: 'Cormorant Garamond', serif; font-size: clamp(52px, 10vw, 96px); font-weight: 300; line-height: 1; margin-bottom: 16px; }
+  .hero-eyebrow { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; opacity: 0.8; margin-bottom: 24px; }
+  .hero-names { font-family: 'Cormorant Garamond', serif; font-size: clamp(44px, 8vw, 88px); font-weight: 300; line-height: 1; margin-bottom: 16px; }
   .hero-ampersand { font-style: italic; opacity: 0.75; }
   .hero-date-bar { display: flex; align-items: center; gap: 16px; justify-content: center; margin-top: 28px; }
   .hero-date-line { width: 48px; height: 1px; background: rgba(255,255,255,0.4); }
   .hero-date-text { font-size: 13px; letter-spacing: 3px; opacity: 0.85; }
-  .hero-scroll { position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%); font-size: 20px; opacity: 0.5; animation: bounce 2s infinite; }
+  .hero-scroll { position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%); font-size: 20px; opacity: 0.5; animation: bounce 2s infinite; }
   @keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(8px)} }
 
   /* TEXTO BONITO */
@@ -79,40 +76,40 @@
   .countdown-sub { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-top: 6px; }
   .countdown-sep { font-family: 'Cormorant Garamond', serif; font-size: 48px; color: rgba(255,255,255,0.2); align-self: center; padding-bottom: 20px; }
 
+  /* MÓDULOS DE 2 COLUMNAS — aire en desktop */
+  .two-col-wrapper { background: #f7f4f0; }
+  @media (min-width: 769px) { .two-col-wrapper { padding: 40px 48px; } }
+
   /* FINCA + MAPA */
-  .section-venue { display: grid; grid-template-columns: 1fr 1fr; min-height: 420px; }
-  @media(max-width:640px){ .section-venue { grid-template-columns: 1fr; } }
+  .section-venue { display: grid; grid-template-columns: 1fr 1fr; min-height: 420px; overflow: hidden; border-radius: 2px; }
+  @media (max-width: 768px) { .section-venue { grid-template-columns: 1fr; } }
   .venue-photo { min-height: 320px; overflow: hidden; }
   .venue-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .venue-photo-placeholder { background: linear-gradient(135deg, #c8b49a 0%, #9a7d5e 100%); width: 100%; height: 100%; min-height: 320px; display: flex; align-items: center; justify-content: center; }
-  .venue-map { background: #e8e0d5; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 320px; gap: 16px; text-decoration: none; transition: background 0.2s; }
-  .venue-map:hover { background: #ddd4c5; }
-  .venue-map-icon { font-size: 40px; color: #2c3e50; }
-  .venue-map-name { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: #2a2a2a; text-align: center; padding: 0 20px; }
-  .venue-map-sub { font-size: 11px; letter-spacing: 2px; color: #888; text-transform: uppercase; }
+  .venue-map { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 320px; text-decoration: none; overflow: hidden; position: relative; }
+  .venue-map img { width: 100%; height: 100%; object-fit: cover; display: block; position: absolute; inset: 0; }
+  .venue-map-overlay { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 12px; background: rgba(0,0,0,0.38); width: 100%; height: 100%; min-height: 320px; justify-content: center; transition: background 0.2s; padding: 20px; }
+  .venue-map:hover .venue-map-overlay { background: rgba(0,0,0,0.52); }
+  .venue-map-name { font-family: 'Cormorant Garamond', serif; font-size: 26px; color: #fff; text-align: center; }
+  .venue-map-sub { font-size: 11px; letter-spacing: 2px; color: rgba(255,255,255,0.75); text-transform: uppercase; }
 
   /* BUSES */
-  .section-buses { display: grid; grid-template-columns: 1fr 1fr; min-height: 360px; }
-  @media(max-width:640px){ .section-buses { grid-template-columns: 1fr; } }
-  .buses-photo { min-height: 280px; overflow: hidden; }
-  .buses-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .buses-photo-placeholder { background: linear-gradient(135deg, #7a8fa0 0%, #4a6070 100%); width: 100%; height: 100%; min-height: 280px; display: flex; align-items: center; justify-content: center; }
+  .section-buses { display: grid; grid-template-columns: 1fr 1fr; min-height: 360px; overflow: hidden; border-radius: 2px; }
+  @media (max-width: 768px) { .section-buses { grid-template-columns: 1fr; } }
   .buses-info { background: #faf8f4; padding: 48px 36px; display: flex; flex-direction: column; justify-content: center; }
   .buses-title { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 300; color: #2a2a2a; margin-bottom: 24px; }
   .buses-row { display: flex; align-items: baseline; gap: 12px; margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid #eee; }
-  .buses-row:last-child { border-bottom: none; margin-bottom: 0; }
+  .buses-row:last-of-type { border-bottom: none; margin-bottom: 0; }
   .buses-time { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: #2c3e50; min-width: 60px; }
   .buses-desc { font-size: 14px; color: #666; line-height: 1.5; }
+  .buses-photo { min-height: 280px; overflow: hidden; }
+  .buses-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
   /* SAVE THE DATE */
   .section-savedate { padding: 72px 20px; background: #fff; text-align: center; }
   .savedate-label { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: #b5a48a; margin-bottom: 24px; }
   .savedate-title { font-family: 'Cormorant Garamond', serif; font-size: 36px; font-weight: 300; font-style: italic; color: #2a2a2a; margin-bottom: 32px; }
-  .video-wrapper { max-width: 640px; margin: 0 auto; aspect-ratio: 16/9; }
-  .video-wrapper iframe { width: 100%; height: 100%; border: none; border-radius: 2px; }
-  .video-placeholder { max-width: 560px; margin: 0 auto; background: #2a2a2a; border-radius: 4px; height: 280px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; }
-  .video-play { width: 56px; height: 56px; border-radius: 50%; border: 2px solid rgba(255,255,255,0.4); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.6); font-size: 20px; }
-  .video-text { font-size: 12px; letter-spacing: 1px; color: rgba(255,255,255,0.4); text-transform: uppercase; }
+  .video-wrapper { max-width: 720px; margin: 0 auto; border-radius: 2px; overflow: hidden; background: #000; }
+  .video-wrapper video { width: 100%; display: block; max-height: 460px; object-fit: cover; }
 
   /* CARRUSEL */
   .section-carousel { padding: 72px 0; background: #b8cce0; }
@@ -120,8 +117,9 @@
   .carousel-title { font-family: 'Cormorant Garamond', serif; font-size: 36px; font-weight: 300; color: #fff; text-align: center; margin-bottom: 36px; font-style: italic; }
   .carousel-outer { overflow: hidden; padding: 0 32px; }
   .carousel-track { display: flex; gap: 16px; transition: transform 0.4s ease; }
-  .carousel-slide { flex: 0 0 calc(33.333% - 11px); aspect-ratio: 3/4; background: rgba(255,255,255,0.2); border-radius: 2px; display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.5); font-size: 11px; letter-spacing: 1px; text-transform: uppercase; border: 1px solid rgba(255,255,255,0.25); overflow: hidden; }
-  .carousel-slide img { width: 100%; height: 100%; object-fit: cover; }
+  .carousel-slide { flex: 0 0 calc(33.333% - 11px); aspect-ratio: 3/4; border-radius: 2px; overflow: hidden; border: 1px solid rgba(255,255,255,0.25); }
+  @media (max-width: 768px) { .carousel-slide { flex: 0 0 calc(80% - 8px); } }
+  .carousel-slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .carousel-nav { display: flex; gap: 12px; justify-content: center; margin-top: 20px; }
   .carousel-btn { background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); color: #fff; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; font-size: 16px; display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
   .carousel-btn:hover { background: rgba(255,255,255,0.3); }
@@ -156,7 +154,7 @@
 </head>
 <body>
 
-<!-- ===================== POPUP ===================== -->
+<!-- POPUP -->
 <div id="popup-overlay">
   <div id="popup-card">
     <button id="popup-close" onclick="document.getElementById('popup-overlay').style.display='none'">✕</button>
@@ -164,19 +162,14 @@
     <div class="popup-names">Pablo <span class="popup-ampersand">&</span> Cati</div>
     <div class="popup-date">29 · 08 · 2026 &nbsp;·&nbsp; 12:30 h</div>
     <div class="popup-divider"></div>
-    <p class="popup-text">
-      Con todo nuestro amor os invitamos a compartir con nosotros el día más especial de nuestras vidas. Vuestra presencia hará este momento inolvidable.
-    </p>
-    <button class="popup-btn" onclick="document.getElementById('popup-overlay').style.display='none'">
-      Ver nuestra boda →
-    </button>
+    <p class="popup-text">Con todo nuestro amor os invitamos a compartir con nosotros el día más especial de nuestras vidas. Vuestra presencia hará este momento inolvidable.</p>
+    <button class="popup-btn" onclick="document.getElementById('popup-overlay').style.display='none'">Ver nuestra boda →</button>
   </div>
 </div>
 
-<!-- ===================== HERO ===================== -->
-<!-- Para añadir foto de fondo: cambia el background del #hero por: background: url('img/hero.jpg') center/cover no-repeat; -->
+<!-- HERO -->
 <section id="hero">
-  <div class="hero-bg-pattern"></div>
+  <div class="hero-overlay"></div>
   <div class="hero-content">
     <p class="hero-eyebrow">Os invitamos a celebrar nuestra boda</p>
     <div class="hero-names">Pablo <span class="hero-ampersand">&</span> Cati</div>
@@ -189,17 +182,15 @@
   <div class="hero-scroll">↓</div>
 </section>
 
-<!-- ===================== TEXTO BONITO ===================== -->
+<!-- TEXTO BONITO -->
 <section class="section-prose">
   <div class="prose-deco">❧</div>
   <h2 class="prose-title">Un día para toda la vida</h2>
-  <p class="prose-body">
-    Cuando dos almas se encuentran, el tiempo se detiene. Queremos que compartas con nosotros el instante en que dos caminos se convierten en uno solo, rodeados de las personas que más queremos.
-  </p>
+  <p class="prose-body">Cuando dos almas se encuentran, el tiempo se detiene. Queremos que compartas con nosotros el instante en que dos caminos se convierten en uno solo, rodeados de las personas que más queremos.</p>
   <div class="prose-deco">❧</div>
 </section>
 
-<!-- ===================== CUENTA ATRÁS ===================== -->
+<!-- CUENTA ATRÁS -->
 <section class="section-countdown">
   <p class="countdown-label">Faltan</p>
   <div class="countdown-grid">
@@ -213,80 +204,68 @@
   </div>
 </section>
 
-<!-- ===================== FINCA + MAPA ===================== -->
-<section class="section-venue">
-  <!-- Para añadir foto: reemplaza el div placeholder por: <img src="img/finca.jpg" alt="Finca La Tayada"> -->
-  <div class="venue-photo">
-    <div class="venue-photo-placeholder">
-      <div style="text-align:center; color:rgba(255,255,255,0.6)">
-        <div style="font-size:48px; margin-bottom:8px">🏡</div>
-        <div style="font-size:11px; letter-spacing:2px; text-transform:uppercase">Foto Finca La Tayada</div>
+<!-- FINCA + MAPA -->
+<div class="two-col-wrapper">
+  <section class="section-venue">
+    <div class="venue-photo">
+      <img src="img/Tayada.jpeg" alt="Finca La Tayada">
+    </div>
+    <a class="venue-map" href="https://www.google.com/maps?rlz=1C1GCEA_enES1188ES1190&um=1&ie=UTF-8&fb=1&gl=es&sa=X&geocode=KRehxquR0UMNMflWl33deQ7U&daddr=Diseminado+Cr+Madrid+Irun,+516,+28710+El+Molar,+Madrid" target="_blank">
+      <img src="img/MapaTayada.png" alt="Mapa Finca La Tayada">
+      <div class="venue-map-overlay">
+        <div class="venue-map-name">Finca La Tayada<br>El Molar, Madrid</div>
+        <div class="venue-map-sub">Ver en Google Maps →</div>
       </div>
-    </div>
-  </div>
-  <a class="venue-map" href="https://www.google.com/maps?rlz=1C1GCEA_enES1188ES1190&um=1&ie=UTF-8&fb=1&gl=es&sa=X&geocode=KRehxquR0UMNMflWl33deQ7U&daddr=Diseminado+Cr+Madrid+Irun,+516,+28710+El+Molar,+Madrid" target="_blank">
-    <div class="venue-map-icon">📍</div>
-    <div class="venue-map-name">Finca La Tayada<br>El Molar, Madrid</div>
-    <div class="venue-map-sub">Ver en Google Maps →</div>
-  </a>
-</section>
+    </a>
+  </section>
+</div>
 
-<!-- ===================== BUSES ===================== -->
-<section class="section-buses">
-  <!-- Para añadir foto: reemplaza el div placeholder por: <img src="img/buses.jpg" alt="Plaza de Castilla"> -->
-  <div class="buses-photo">
-    <div class="buses-photo-placeholder">
-      <div style="text-align:center; color:rgba(255,255,255,0.7)">
-        <div style="font-size:48px; margin-bottom:8px">🚌</div>
-        <div style="font-size:11px; letter-spacing:2px; text-transform:uppercase">Foto Plaza de Castilla</div>
+<!-- BUSES -->
+<div class="two-col-wrapper">
+  <section class="section-buses">
+    <div class="buses-info">
+      <h3 class="buses-title">Autobuses</h3>
+      <div class="buses-row">
+        <span class="buses-time">11:00</span>
+        <span class="buses-desc">Salida desde Plaza de Castilla · Llegada a la finca aprox. 11:45 h</span>
       </div>
+      <div class="buses-row">
+        <span class="buses-time">20:00</span>
+        <span class="buses-desc">Primer regreso a Madrid</span>
+      </div>
+      <div class="buses-row">
+        <span class="buses-time">02:00</span>
+        <span class="buses-desc">Último autobús a Madrid</span>
+      </div>
+      <p style="font-size:13px;color:#aaa;margin-top:16px;font-style:italic">* Horarios orientativos, confirmaremos antes de la boda</p>
     </div>
-  </div>
-  <div class="buses-info">
-    <h3 class="buses-title">Autobuses</h3>
-    <div class="buses-row">
-      <span class="buses-time">11:00</span>
-      <span class="buses-desc">Salida desde Plaza de Castilla · Llegada a la finca aprox. 11:45 h</span>
+    <div class="buses-photo">
+      <img src="img/Bus.jpg" alt="Autobús Plaza de Castilla">
     </div>
-    <div class="buses-row">
-      <span class="buses-time">20:00</span>
-      <span class="buses-desc">Primer regreso a Madrid</span>
-    </div>
-    <div class="buses-row">
-      <span class="buses-time">02:00</span>
-      <span class="buses-desc">Último autobús a Madrid</span>
-    </div>
-    <p style="font-size:13px; color:#aaa; margin-top:16px; font-style:italic">* Horarios orientativos, confirmaremos antes de la boda</p>
-  </div>
-</section>
+  </section>
+</div>
 
-<!-- ===================== SAVE THE DATE ===================== -->
+<!-- SAVE THE DATE -->
 <section class="section-savedate">
   <p class="savedate-label">Save the date</p>
   <h3 class="savedate-title">Guarda este día en tu corazón</h3>
-  <!-- Para añadir vídeo de YouTube: reemplaza el div placeholder por:
   <div class="video-wrapper">
-    <iframe src="https://www.youtube.com/embed/TU_ID_DE_VIDEO" allowfullscreen></iframe>
-  </div>
-  -->
-  <div class="video-placeholder">
-    <div class="video-play">▶</div>
-    <div class="video-text">Vídeo · próximamente</div>
+    <video controls playsinline poster="img/HeroBanner.jpeg">
+      <source src="img/BODA GRUTAL.mp4" type="video/mp4">
+    </video>
   </div>
 </section>
 
-<!-- ===================== CARRUSEL ===================== -->
+<!-- CARRUSEL -->
 <section class="section-carousel">
   <p class="carousel-label">Nosotros</p>
   <h3 class="carousel-title">Nuestra historia</h3>
   <div class="carousel-outer">
-    <!-- Para añadir fotos: reemplaza cada "Foto N" por: <img src="img/foto1.jpg" alt=""> -->
     <div class="carousel-track" id="carousel-track">
-      <div class="carousel-slide">Foto 1</div>
-      <div class="carousel-slide">Foto 2</div>
-      <div class="carousel-slide">Foto 3</div>
-      <div class="carousel-slide">Foto 4</div>
-      <div class="carousel-slide">Foto 5</div>
+      <div class="carousel-slide"><img src="img/Carrusel1.jpeg" alt="Foto 1"></div>
+      <div class="carousel-slide"><img src="img/Carrusel2.jpeg" alt="Foto 2"></div>
+      <div class="carousel-slide"><img src="img/Carrusel3.jpeg" alt="Foto 3"></div>
+      <div class="carousel-slide"><img src="img/Carrusel4.jpeg" alt="Foto 4"></div>
     </div>
   </div>
   <div class="carousel-nav">
@@ -296,7 +275,7 @@
   <div class="carousel-dots" id="carousel-dots"></div>
 </section>
 
-<!-- ===================== INFO ADICIONAL ===================== -->
+<!-- INFO ADICIONAL -->
 <section class="section-info">
   <h3 class="info-title">Algunos consejos para el día</h3>
   <div class="info-grid">
@@ -323,29 +302,22 @@
   </div>
 </section>
 
-<!-- ===================== FOOTER ===================== -->
+<!-- FOOTER -->
 <footer>
   <p>Pablo & Cati · 29 · 08 · 2026</p>
 </footer>
 
-<!-- ===================== STICKY BUTTON ===================== -->
+<!-- STICKY BUTTON -->
 <button id="sticky-btn" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSejbtLE-QTSExXF7bL2Dti91zZoPRWmMtOt-TwYND0I-KIOAg/viewform?usp=publish-editor','_blank')">
   ✉ Confirmar asistencia
 </button>
 
 <script>
-  // ---- CUENTA ATRÁS ----
+  // CUENTA ATRÁS
   function updateCountdown() {
     const target = new Date('2026-08-29T12:30:00');
-    const now = new Date();
-    const diff = target - now;
-    if (diff <= 0) {
-      document.getElementById('cd-days').textContent = '00';
-      document.getElementById('cd-hours').textContent = '00';
-      document.getElementById('cd-mins').textContent = '00';
-      document.getElementById('cd-secs').textContent = '00';
-      return;
-    }
+    const diff = target - new Date();
+    if (diff <= 0) return;
     document.getElementById('cd-days').textContent = String(Math.floor(diff / 86400000)).padStart(2,'0');
     document.getElementById('cd-hours').textContent = String(Math.floor((diff % 86400000) / 3600000)).padStart(2,'0');
     document.getElementById('cd-mins').textContent = String(Math.floor((diff % 3600000) / 60000)).padStart(2,'0');
@@ -354,26 +326,24 @@
   updateCountdown();
   setInterval(updateCountdown, 1000);
 
-  // ---- CARRUSEL ----
-  const totalSlides = document.querySelectorAll('.carousel-slide').length;
+  // CARRUSEL
+  const slides = document.querySelectorAll('.carousel-slide');
   let currentSlide = 0;
   const dotsContainer = document.getElementById('carousel-dots');
-
-  for (let i = 0; i < totalSlides; i++) {
+  slides.forEach((_, i) => {
     const dot = document.createElement('div');
     dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
     dot.onclick = () => goToSlide(i);
     dotsContainer.appendChild(dot);
-  }
-
+  });
   function goToSlide(n) {
     currentSlide = n;
-    const slideWidth = document.querySelector('.carousel-slide').offsetWidth + 16;
-    document.getElementById('carousel-track').style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+    const w = slides[0].offsetWidth + 16;
+    document.getElementById('carousel-track').style.transform = `translateX(-${currentSlide * w}px)`;
     document.querySelectorAll('.carousel-dot').forEach((d, i) => d.classList.toggle('active', i === currentSlide));
   }
-  function nextSlide() { goToSlide((currentSlide + 1) % totalSlides); }
-  function prevSlide() { goToSlide((currentSlide - 1 + totalSlides) % totalSlides); }
+  function nextSlide() { goToSlide((currentSlide + 1) % slides.length); }
+  function prevSlide() { goToSlide((currentSlide - 1 + slides.length) % slides.length); }
 </script>
 </body>
 </html>
