@@ -120,18 +120,6 @@
     background: #fff;
     overflow: hidden;
   }
-  .about-olive-left, .about-olive-right {
-    position: absolute;
-    top: 0;
-    height: 100%;
-    width: 140px;
-    object-fit: contain;
-    object-position: top;
-    opacity: 0.9;
-    pointer-events: none;
-  }
-  .about-olive-left { left: 0; object-position: top left; }
-  .about-olive-right { right: 0; object-position: top right; transform: scaleX(-1); }
   .about-illustration {
     width: 140px;
     max-width: 60%;
@@ -189,10 +177,14 @@
   .venue-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
   /* EN EL MOLAR (link a maps) */
-  .section-molar { padding: 56px 40px; background: #f7f4f0; }
-  @media (min-width: 769px) { .section-molar { padding: 40px 88px; } }
+  .section-molar { display: grid; grid-template-columns: 1fr 1fr; overflow: hidden; background: #f7f4f0; }
+  @media (max-width: 768px) { .section-molar { grid-template-columns: 1fr; } }
+  .molar-text { padding: 56px 40px; display: flex; flex-direction: column; justify-content: center; }
+  @media (min-width: 769px) { .molar-text { padding: 48px 56px; } }
+  .molar-photo { min-height: 320px; overflow: hidden; }
+  .molar-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .molar-title { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 300; color: #2a2a2a; margin-bottom: 18px; font-style: italic; }
-  .molar-body { font-size: 14px; color: #777; line-height: 1.8; max-width: 720px; }
+  .molar-body { font-size: 14px; color: #777; line-height: 1.8; }
   .molar-body p { margin-bottom: 14px; }
   .molar-body p:last-child { margin-bottom: 0; }
   .molar-body strong { color: #2a2a2a; font-weight: 500; }
@@ -331,11 +323,9 @@
 
 <!-- SOBRE NOSOTROS -->
 <section class="section-about" id="nosotros">
-  <img class="about-olive-left" src="img/olivos1.png" alt="">
-  <img class="about-olive-right" src="img/olivos2.png" alt="">
   <img class="about-illustration" src="img/gorilaygato.png" alt="Gatito y gorila">
   <p class="about-text">
-    ¡Hola! Somos Pablo (Morita) y Cati (Cartulina). Y para los amigos somos los Grutos. ¡Ya ni nos acordamos de por qué empezamos a llamarnos así! Empezamos a estar juntos hace muuucho tiempo. Al cumplir los 18 nos enamoramos y ahora con nuestra crisis de los 30 creemos que es el momento de celebrar este amor como se merece. Porque si hay una cosa que nos gusta a los Grutos es celebrar. Somos muy fiesteros, pero también muy amorosos, por eso queremos juntar a la gente más especial del mundo para vivir una boda grutal. (¡Sí, hemos dicho grutal!)
+    ¡Hola! Somos Pablo (Morita) y Cati (Cartulina). Y para los amigos somos los Grutus. ¡Ya ni nos acordamos de por qué empezamos a llamarnos así! Empezamos a estar juntos hace muuucho tiempo. Al cumplir los 18 nos enamoramos y ahora con nuestra crisis de los 30 creemos que es el momento de celebrar este amor como se merece. Porque si hay una cosa que nos gusta a los Grutus es celebrar. Somos muy fiesteros, pero también muy amorosos, por eso queremos juntar a la gente más especial del mundo para vivir una boda grutal. (¡Sí, hemos dicho grutal!)
   </p>
 </section>
 
@@ -343,7 +333,7 @@
 <section class="section-ready" id="preparados">
   <h3 class="ready-title">¿Estáis <strong>preparados</strong>?</h3>
   <p class="ready-subtitle">Nosotros todavía no</p>
-  <img class="ready-gif" src="img/preparados.gif" alt="Nosotros todavía no estamos preparados">
+  <img class="ready-gif" src="img/Monkey_What_GIF.gif" alt="Nosotros todavía no estamos preparados">
 </section>
 
 <!-- CUENTA ATRÁS -->
@@ -380,11 +370,16 @@
 
 <!-- EN EL MOLAR -->
 <section class="section-molar">
-  <h3 class="molar-title">En el Molar, porque molamos.</h3>
-  <div class="molar-body">
-    <p><strong>La Tayada</strong> se encuentra en la Carretera N-1 (Madrid-Burgos), en <strong>el municipio El Molar</strong> que hace límite con San Agustín de Guadalix.</p>
-    <p>Esta es la dirección <a class="molar-link" href="https://www.google.com/maps?rlz=1C1GCEA_enES1188ES1190&um=1&ie=UTF-8&fb=1&gl=es&sa=X&geocode=KRehxquR0UMNMflWl33deQ7U&daddr=Diseminado+Cr+Madrid+Irun,+516,+28710+El+Molar,+Madrid" target="_blank">Diseminado Cr Madrid Irun, 516, 28710 El Molar, Madrid</a>, pero podéis hacer clic a vuestra derecha para que os lleve directamente a <a class="molar-link" href="https://www.google.com/maps?rlz=1C1GCEA_enES1188ES1190&um=1&ie=UTF-8&fb=1&gl=es&sa=X&geocode=KRehxquR0UMNMflWl33deQ7U&daddr=Diseminado+Cr+Madrid+Irun,+516,+28710+El+Molar,+Madrid" target="_blank">Google Maps</a>.</p>
+  <div class="molar-text">
+    <h3 class="molar-title">En el Molar, porque molamos.</h3>
+    <div class="molar-body">
+      <p><strong>La Tayada</strong> se encuentra en la Carretera N-1 (Madrid-Burgos), en <strong>el municipio El Molar</strong> que hace límite con San Agustín de Guadalix.</p>
+      <p>Esta es la dirección <a class="molar-link" href="https://www.google.com/maps?rlz=1C1GCEA_enES1188ES1190&um=1&ie=UTF-8&fb=1&gl=es&sa=X&geocode=KRehxquR0UMNMflWl33deQ7U&daddr=Diseminado+Cr+Madrid+Irun,+516,+28710+El+Molar,+Madrid" target="_blank">Diseminado Cr Madrid Irun, 516, 28710 El Molar, Madrid</a>, pero podéis hacer clic a vuestra derecha para que os lleve directamente a <a class="molar-link" href="https://www.google.com/maps?rlz=1C1GCEA_enES1188ES1190&um=1&ie=UTF-8&fb=1&gl=es&sa=X&geocode=KRehxquR0UMNMflWl33deQ7U&daddr=Diseminado+Cr+Madrid+Irun,+516,+28710+El+Molar,+Madrid" target="_blank">Google Maps</a>.</p>
+    </div>
   </div>
+  <a class="molar-photo" href="https://www.google.com/maps?rlz=1C1GCEA_enES1188ES1190&um=1&ie=UTF-8&fb=1&gl=es&sa=X&geocode=KRehxquR0UMNMflWl33deQ7U&daddr=Diseminado+Cr+Madrid+Irun,+516,+28710+El+Molar,+Madrid" target="_blank">
+    <img src="img/MapaTayada.png" alt="Mapa Finca La Tayada">
+  </a>
 </section>
 
 <!-- CÓMO LLEGAR -->
