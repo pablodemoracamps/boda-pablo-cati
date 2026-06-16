@@ -17,7 +17,7 @@
     z-index: 9999; backdrop-filter: blur(3px);
   }
   #popup-card {
-    background: #faf8f4; width: 82vw; max-width: 560px; max-height: 88vh;
+    background: #f7f4f0; width: 82vw; max-width: 560px; max-height: 88vh;
     border-radius: 2px; padding: 56px 48px 48px;
     position: relative; text-align: center; overflow-y: auto;
     border: 1px solid #d4c9b0;
@@ -49,11 +49,11 @@
   #menu-toggle {
     position: fixed; top: 20px; left: 20px; z-index: 2000;
     width: 48px; height: 48px; border: none; border-radius: 50%;
-    background: rgba(255,255,255,0.18); backdrop-filter: blur(6px);
+    background: #c25a32;
     display: flex; align-items: center; justify-content: center;
     cursor: pointer; transition: background 0.2s;
   }
-  #menu-toggle:hover { background: rgba(255,255,255,0.3); }
+  #menu-toggle:hover { background: #a34828; }
   #menu-toggle span, #menu-toggle span::before, #menu-toggle span::after {
     content: ''; display: block; width: 20px; height: 1.5px; background: #f7f4f0;
     transition: transform 0.25s, opacity 0.25s; position: relative;
@@ -63,10 +63,10 @@
   body.menu-open #menu-toggle span { background: transparent; }
   body.menu-open #menu-toggle span::before { transform: rotate(45deg) translate(5px,5px); background: #2a2a2a; }
   body.menu-open #menu-toggle span::after { transform: rotate(-45deg) translate(5px,-5px); background: #2a2a2a; }
-  body.menu-open #menu-toggle { background: rgba(255,255,255,0.9); }
+  body.menu-open #menu-toggle { background: #f7f4f0; }
 
   #nav-overlay {
-    position: fixed; inset: 0; background: #faf8f4;
+    position: fixed; inset: 0; background: #f7f4f0;
     z-index: 1900; display: flex; align-items: center; justify-content: center;
     opacity: 0; visibility: hidden; transition: opacity 0.3s;
   }
@@ -91,7 +91,7 @@
   @media (max-width: 768px) {
     #hero {
       height: 100vh;
-      background: url('img/HeroBanner.jpeg') center 30% / cover no-repeat;
+      background: url('img/HeroBanner.jpeg') 65% 30% / cover no-repeat;
       align-items: flex-start;
       padding-top: 80px;
     }
@@ -171,7 +171,7 @@
   /* DONDE NOS VEMOS (texto + foto finca) */
   .section-venue { display: grid; grid-template-columns: 1fr 1fr; min-height: 420px; overflow: hidden; border-radius: 2px; }
   @media (max-width: 768px) { .section-venue { grid-template-columns: 1fr; } }
-  .venue-text { background: #faf8f4; padding: 48px 40px; display: flex; flex-direction: column; justify-content: center; }
+  .venue-text { background: #f7f4f0; padding: 48px 40px; display: flex; flex-direction: column; justify-content: center; }
   .venue-title { font-family: 'Quicksand', sans-serif; font-size: 28px; font-weight: 500; color: #2a2a2a; margin-bottom: 8px; }
   .venue-subtitle { font-family: 'Quicksand', sans-serif; font-size: 17px; font-weight: 400; color: #777; margin-bottom: 20px; }
   .venue-body { font-family: 'Quicksand', sans-serif; font-size: 15px; color: #777; line-height: 1.8; }
@@ -211,7 +211,7 @@
   /* BUSES */
   .section-buses { display: grid; grid-template-columns: 1fr 1fr; overflow: hidden; border-radius: 2px; }
   @media (max-width: 768px) { .section-buses { grid-template-columns: 1fr; } }
-  .buses-info { background: #faf8f4; padding: 48px 40px; display: flex; flex-direction: column; justify-content: center; }
+  .buses-info { background: #f7f4f0; padding: 48px 40px; display: flex; flex-direction: column; justify-content: center; }
   .buses-title { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 300; color: #2a2a2a; margin-bottom: 28px; font-style: italic; }
   .buses-row { display: flex; align-items: baseline; gap: 16px; margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid #ebe7e0; }
   .buses-row:last-of-type { border-bottom: none; margin-bottom: 0; }
@@ -233,8 +233,8 @@
   .carousel-title { font-family: 'Quicksand', sans-serif; font-size: 32px; font-weight: 500; color: #fff; text-align: center; margin-bottom: 36px; }
   .carousel-outer { overflow: hidden; padding: 0 32px; }
   .carousel-track { display: flex; gap: 16px; transition: transform 0.4s ease; align-items: stretch; }
-  .carousel-slide { flex: 0 0 calc(33.333% - 11px); height: 380px; border-radius: 2px; overflow: hidden; border: 1px solid rgba(255,255,255,0.25); }
-  @media (max-width: 768px) { .carousel-slide { flex: 0 0 calc(80% - 8px); height: 300px; } }
+  .carousel-slide { flex: 0 0 calc(33.333% - 11px); aspect-ratio: 4/3; height: auto; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.25); }
+  @media (max-width: 768px) { .carousel-slide { flex: 0 0 calc(80% - 8px); } }
   .carousel-slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .carousel-nav { display: flex; gap: 12px; justify-content: center; margin-top: 24px; }
   .carousel-btn { background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); color: #fff; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; font-size: 18px; display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
