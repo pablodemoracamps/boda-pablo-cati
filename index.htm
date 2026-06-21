@@ -49,11 +49,11 @@
   #menu-toggle {
     position: fixed; top: 20px; left: 20px; z-index: 2000;
     width: 48px; height: 48px; border: none; border-radius: 50%;
-    background: #c25a32;
+    background: #FFB775;
     display: flex; align-items: center; justify-content: center;
     cursor: pointer; transition: background 0.2s;
   }
-  #menu-toggle:hover { background: #a34828; }
+  #menu-toggle:hover { background: #ffa452; }
   #menu-toggle span, #menu-toggle span::before, #menu-toggle span::after {
     content: ''; display: block; width: 20px; height: 1.5px; background: #efe9e0;
     transition: transform 0.25s, opacity 0.25s; position: relative;
@@ -175,7 +175,7 @@
   .ready-gif { max-width: 280px; width: 100%; border-radius: 4px; display: block; margin: 0 auto; }
 
   /* CONTADOR */
-  .section-countdown { padding: 44px 20px; background: #2c3e50; text-align: center; }
+  .section-countdown { padding: 44px 20px; background: #5272FF; text-align: center; }
   .countdown-label { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 36px; }
   .countdown-grid { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; align-items: center; }
   .countdown-unit { text-align: center; }
@@ -216,7 +216,7 @@
   .molar-link:hover { color: #c25a32; }
 
   /* COMO LLEGAR */
-  .section-howto { display: grid; grid-template-columns: 1fr 2.2fr; overflow: hidden; background: #E6FFFC; align-items: center; gap: 24px; }
+  .section-howto { display: grid; grid-template-columns: 1fr 2.2fr; overflow: hidden; background: #DDF4FF; align-items: center; gap: 24px; }
   @media (max-width: 768px) { .section-howto { grid-template-columns: 1fr; gap: 0; } }
   .howto-photo { min-height: 200px; max-height: 280px; overflow: hidden; border-radius: 4px; margin: 24px; box-shadow: 0 8px 30px rgba(0,0,0,0.12); }
   @media (max-width: 768px) { .howto-photo { margin: 0 24px 32px; } }
@@ -253,7 +253,7 @@
   .video-wrapper video { width: 100%; display: block; max-height: 480px; object-fit: contain; }
 
   /* CARRUSEL */
-  .section-carousel { padding: 44px 0; background: #229EA6; }
+  .section-carousel { padding: 44px 0; background: #66A3FF; }
   .carousel-label { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.65); text-align: center; margin-bottom: 12px; }
   .carousel-title { font-family: 'Quicksand', sans-serif; font-size: 32px; font-weight: 500; color: #fff; text-align: center; margin-bottom: 36px; }
   .carousel-outer { overflow: hidden; padding: 0 32px; }
@@ -332,25 +332,25 @@
   .info-item-text { font-family: 'Quicksand', sans-serif; font-size: 15px; color: #777; line-height: 1.6; }
 
   /* FOOTER */
-  footer { padding: 40px 20px; text-align: center; background: #2c3e50; }
+  footer { padding: 40px 20px; text-align: center; background: #5272FF; }
   footer p { font-size: 11px; letter-spacing: 3px; color: rgba(255,255,255,0.3); text-transform: uppercase; font-family: 'Quicksand', sans-serif; font-weight: 300; }
 
   /* STICKY BUTTON */
   @keyframes pulse {
     0%, 90%, 100% { transform: translateX(-50%) scale(1); box-shadow: 0 4px 20px rgba(0,0,0,0.25); }
-    93% { transform: translateX(-50%) scale(1.08); box-shadow: 0 6px 28px rgba(194,90,50,0.5); }
+    93% { transform: translateX(-50%) scale(1.08); box-shadow: 0 6px 28px rgba(255,183,117,0.6); }
     96% { transform: translateX(-50%) scale(1); box-shadow: 0 4px 20px rgba(0,0,0,0.25); }
-    98% { transform: translateX(-50%) scale(1.05); box-shadow: 0 6px 24px rgba(194,90,50,0.4); }
+    98% { transform: translateX(-50%) scale(1.05); box-shadow: 0 6px 24px rgba(255,183,117,0.5); }
   }
   #sticky-btn {
     position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%);
-    background: #c25a32; color: #fff; border: none; cursor: pointer;
+    background: #FFB775; color: #fff; border: none; cursor: pointer;
     padding: 20px 54px; font-family: 'Jost', sans-serif; font-size: 13px;
     letter-spacing: 2px; text-transform: uppercase; border-radius: 3px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.25); z-index: 1000;
     white-space: nowrap; animation: pulse 5s ease-in-out infinite;
   }
-  #sticky-btn:hover { background: #a34828; transform: translateX(-50%) translateY(-2px) scale(1.02); }
+  #sticky-btn:hover { background: #ffa452; transform: translateX(-50%) translateY(-2px) scale(1.02); }
 
   /* MOBILE HERO SPACING OVERRIDE (placed last to win cascade) */
   @media (max-width: 768px) {
