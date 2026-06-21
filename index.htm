@@ -197,8 +197,12 @@
   .molar-link:hover { color: #c25a32; }
 
   /* COMO LLEGAR */
-  .section-howto { padding: 44px 20px; background: #efe9e0; text-align: left; max-width: 720px; margin: 0 auto; }
-  .howto-title { font-family: 'Quicksand', sans-serif; font-size: 28px; font-weight: 500; color: #2a2a2a; margin-bottom: 28px; text-align: center; }
+  .section-howto { display: grid; grid-template-columns: 1fr 1.4fr; gap: 40px; align-items: center; padding: 44px 20px; background: #efe9e0; max-width: 980px; margin: 0 auto; }
+  @media (max-width: 768px) { .section-howto { grid-template-columns: 1fr; gap: 24px; } }
+  .howto-photo { min-height: 280px; max-height: 380px; overflow: hidden; border-radius: 4px; box-shadow: 0 8px 30px rgba(0,0,0,0.12); }
+  .howto-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .howto-content { text-align: left; }
+  .howto-title { font-family: 'Quicksand', sans-serif; font-size: 28px; font-weight: 500; color: #2a2a2a; margin-bottom: 28px; text-align: left; }
   .howto-block { margin-bottom: 22px; }
   .howto-block:last-child { margin-bottom: 0; }
   .howto-question { font-family: 'Jost', sans-serif; font-size: 15px; font-weight: 500; color: #2a2a2a; margin-bottom: 8px; }
@@ -400,19 +404,24 @@
 
 <!-- CÓMO LLEGAR -->
 <section class="section-howto" id="como-llegar">
-  <h3 class="howto-title">Cómo llegar</h3>
-  <div class="howto-block">
-    <div class="howto-question">¿Te gusta conducir?</div>
-    <div class="howto-text">Si prefieres ir en coche y a tu ritmo, la finca no está muy lejos de Madrid. Pero en el caso de que quieras darlo todo, tendrás varios autobuses disponibles.</div>
+  <div class="howto-photo">
+    <img src="img/plaza-castilla.png" alt="Plaza de Castilla">
   </div>
-  <div class="howto-block">
-    <div class="howto-question">Si prefieres autobús:</div>
-    <ul class="howto-list">
-      <li><strong>IDA</strong> → Saldrá desde Plaza de Castilla a las 11:30h a.m.</li>
-      <li><strong>VUELTA</strong> → Volverán dos autobuses. El primero a las 21:00h y el segundo a las 24:00h. También desde Plaza de Castilla</li>
-    </ul>
+  <div class="howto-content">
+    <h3 class="howto-title">Cómo llegar</h3>
+    <div class="howto-block">
+      <div class="howto-question">¿Te gusta conducir?</div>
+      <div class="howto-text">Si prefieres ir en coche y a tu ritmo, la finca no está muy lejos de Madrid. Pero en el caso de que quieras darlo todo, tendrás varios autobuses disponibles.</div>
+    </div>
+    <div class="howto-block">
+      <div class="howto-question">Si prefieres autobús:</div>
+      <ul class="howto-list">
+        <li><strong>IDA</strong> → Saldrá desde Plaza de Castilla a las 11:30h a.m.</li>
+        <li><strong>VUELTA</strong> → Volverán dos autobuses. El primero a las 21:00h y el segundo a las 24:00h. También desde Plaza de Castilla</li>
+      </ul>
+    </div>
+    <p class="howto-note">*Posibles cambios según respuestas al formulario.</p>
   </div>
-  <p class="howto-note">*Posibles cambios según respuestas al formulario.</p>
 </section>
 
 <!-- SAVE THE DATE -->
@@ -556,4 +565,3 @@
 </script>
 </body>
 </html>
-
