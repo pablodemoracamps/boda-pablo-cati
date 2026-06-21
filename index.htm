@@ -326,7 +326,8 @@
 
   .section-info { padding: 24px 20px 44px; background: #fff; text-align: center; }
   .info-title { font-family: 'Quicksand', sans-serif; font-size: 28px; font-weight: 500; color: #2a2a2a; margin-bottom: 40px; }
-  .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); max-width: 700px; margin: 0 auto; gap: 32px; }
+  .info-grid { display: grid; grid-template-columns: repeat(4, 1fr); max-width: 900px; margin: 0 auto; gap: 32px; }
+  @media (max-width: 768px) { .info-grid { grid-template-columns: 1fr; max-width: 420px; } }
   .info-item { text-align: center; }
   .info-icon { font-size: 28px; margin-bottom: 10px; }
   .info-item-title { font-family: 'Jost', sans-serif; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #2a2a2a; margin-bottom: 8px; }
@@ -368,6 +369,7 @@
     .hero-names { margin-bottom: 0; }
     .hero-date-bar { margin-top: 0; }
   }
+  strong { color: #2a2a2a; }
 </style>
 </head>
 <body>
@@ -386,7 +388,7 @@
     <div class="nav-divider"></div>
     <a href="#cuadernillo" onclick="document.body.classList.remove('menu-open')">Cuadernillo rubio</a>
     <div class="nav-divider"></div>
-    <a href="#consejos" onclick="document.body.classList.remove('menu-open')">Consejos</a>
+    <a href="#di-si-quiero" onclick="document.body.classList.remove('menu-open')">Consejos</a>
   </nav>
 </div>
 
@@ -514,8 +516,7 @@
 
 <!-- CARRUSEL -->
 <section class="section-carousel" id="historia">
-  <p class="carousel-label">Nosotros</p>
-  <h3 class="carousel-title">Nuestra historia</h3>
+  <h3 class="carousel-title">Nosotros</h3>
   <div class="carousel-outer">
     <div class="carousel-track" id="carousel-track">
       <div class="carousel-slide"><img src="img/8.jpeg" alt="Foto 8" style="object-position: center top;"></div>
@@ -573,8 +574,8 @@
 </section>
 
 <!-- DI SI QUIERO -->
-<section class="section-rsvp">
-  <h2 class="rsvp-title">DI SÍ QUIERO IR A UNA BODA GRUTAL</h2>
+<section class="section-rsvp" id="di-si-quiero">
+  <h2 class="rsvp-title">Di sí quiero ir a una boda grutal</h2>
   <p class="rsvp-text">Estamos demasiado felices de que os animéis a vivir este día con nosotros.</p>
   <p class="rsvp-text">No olvidéis rellenar el formulario para indicarnos si vendréis en bus, si tenéis alguna alergia o intolerancia y si os apuntáis a seguir la fiesta después. Así podremos tenerlo todo preparado para ese día.</p>
   <p class="rsvp-quote">Lo dicho: que vengáis ya es increíble. Pero si además os apetece hacernos un regalo, podéis hacerlo a través de esta cuenta:<span class="rsvp-iban">ES86 1465 0100 95 1758926155</span></p>
