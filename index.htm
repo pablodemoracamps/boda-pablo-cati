@@ -89,10 +89,17 @@
   }
   @media (max-width: 768px) {
     #hero {
-      height: 85vh;
-      background: url('img/HeroBanner.jpeg') 40% 35% / 162.5% auto no-repeat;
+      height: 78vh;
+      background: url('img/HeroBanner.jpeg') 40% 35% / 187% auto no-repeat;
       align-items: flex-start;
-      padding-top: 80px;
+      padding-top: 56px;
+    }
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: calc(78vh - 56px);
+      padding-bottom: 28px;
     }
   }
   .hero-overlay { position: absolute; inset: 0; background: rgba(20,12,5,0.48); }
@@ -106,6 +113,13 @@
     text-transform: uppercase;
     line-height: 1;
     margin-bottom: 16px;
+  }
+  @media (max-width: 768px) {
+    .hero-names {
+      font-size: clamp(26px, 8.5vw, 40px);
+      letter-spacing: 5px;
+      white-space: nowrap;
+    }
   }
   .hero-date-bar { display: flex; align-items: center; gap: 16px; justify-content: center; margin-top: 24px; }
   .hero-date-line { width: 48px; height: 1px; background: rgba(255,255,255,0.35); }
