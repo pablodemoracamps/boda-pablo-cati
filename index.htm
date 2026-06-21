@@ -106,14 +106,6 @@
       object-fit: cover;
       object-position: 40% 35%;
     }
-    .hero-content {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 110px 20px 36px;
-    }
   }
   .hero-overlay { position: absolute; inset: 0; background: rgba(20,12,5,0.48); }
   .hero-content { position: relative; text-align: center; color: #fff; padding: 20px; }
@@ -354,6 +346,15 @@
 
   /* MOBILE HERO SPACING OVERRIDE (placed last to win cascade) */
   @media (max-width: 768px) {
+    .hero-content {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 110px 20px 36px;
+      text-align: center;
+    }
     .hero-eyebrow { margin-bottom: 0; }
     .hero-names { margin-bottom: 0; }
     .hero-date-bar { margin-top: 0; }
@@ -644,3 +645,4 @@
 </script>
 </body>
 </html>
+
