@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pablo & Cati · 29.08.2026</title>
-<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&family=Raleway:wght@200;300;700&family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&family=Raleway:wght@200;300;400;500;700&family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   html { scroll-behavior: smooth; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Quicksand', sans-serif; background: #f7f4f0; color: #2a2a2a; overflow-x: hidden; }
+  body { font-family: 'Quicksand', sans-serif; background: #efe9e0; color: #2a2a2a; overflow-x: hidden; }
 
   /* POPUP */
   #popup-overlay {
@@ -17,7 +17,7 @@
     z-index: 9999; backdrop-filter: blur(3px);
   }
   #popup-card {
-    background: #f7f4f0; width: 82vw; max-width: 560px; max-height: 88vh;
+    background: #efe9e0; width: 82vw; max-width: 560px; max-height: 88vh;
     border-radius: 2px; padding: 56px 48px 48px;
     position: relative; text-align: center; overflow-y: auto;
     border: 1px solid #d4c9b0;
@@ -55,7 +55,7 @@
   }
   #menu-toggle:hover { background: #a34828; }
   #menu-toggle span, #menu-toggle span::before, #menu-toggle span::after {
-    content: ''; display: block; width: 20px; height: 1.5px; background: #f7f4f0;
+    content: ''; display: block; width: 20px; height: 1.5px; background: #efe9e0;
     transition: transform 0.25s, opacity 0.25s; position: relative;
   }
   #menu-toggle span::before { position: absolute; top: -7px; }
@@ -63,10 +63,10 @@
   body.menu-open #menu-toggle span { background: transparent; }
   body.menu-open #menu-toggle span::before { transform: rotate(45deg) translate(5px,5px); background: #2a2a2a; }
   body.menu-open #menu-toggle span::after { transform: rotate(-45deg) translate(5px,-5px); background: #2a2a2a; }
-  body.menu-open #menu-toggle { background: #f7f4f0; }
+  body.menu-open #menu-toggle { background: #efe9e0; }
 
   #nav-overlay {
-    position: fixed; inset: 0; background: #f7f4f0;
+    position: fixed; inset: 0; background: #efe9e0;
     z-index: 1900; display: flex; align-items: center; justify-content: center;
     opacity: 0; visibility: hidden; transition: opacity 0.3s;
   }
@@ -102,7 +102,7 @@
   .hero-names {
     font-family: 'Raleway', sans-serif;
     font-size: clamp(36px, 7vw, 80px);
-    font-weight: 700;
+    font-weight: 500;
     letter-spacing: 10px;
     text-transform: uppercase;
     line-height: 1;
@@ -122,9 +122,9 @@
     background: #fff;
   }
   .about-illustration {
-    width: 500px;
+    width: 280px;
     height: auto;
-    max-width: 85%;
+    max-width: 60%;
     margin: 0 auto 16px;
     display: block;
     object-fit: contain;
@@ -144,13 +144,13 @@
   }
 
   /* TEXTO BONITO */
-  .section-prose { padding: 80px 20px; text-align: center; background: #f7f4f0; }
+  .section-prose { padding: 80px 20px; text-align: center; background: #efe9e0; }
   .prose-title { font-family: 'Quicksand', sans-serif; font-size: clamp(26px, 5vw, 40px); font-weight: 500; color: #2a2a2a; margin-bottom: 20px; }
   .prose-body { font-family: 'Quicksand', sans-serif; font-size: 17px; font-weight: 400; color: #666; max-width: 560px; margin: 0 auto; line-height: 1.8; }
   .prose-deco { color: #b5a48a; font-size: 28px; margin: 16px 0; }
 
   /* ESTAIS PREPARADOS */
-  .section-ready { padding: 16px 20px 36px; text-align: center; background: #f7f4f0; }
+  .section-ready { padding: 16px 20px 36px; text-align: center; background: #efe9e0; }
   .ready-title { font-family: 'Quicksand', sans-serif; font-size: clamp(24px, 4.5vw, 36px); font-weight: 500; color: #2a2a2a; margin-bottom: 8px; }
   .ready-title strong { font-weight: 600; }
   .ready-subtitle { font-family: 'Quicksand', sans-serif; font-size: clamp(18px, 3.5vw, 26px); font-weight: 400; color: #999; margin-bottom: 24px; }
@@ -166,13 +166,13 @@
   .countdown-sep { font-family: 'Quicksand', sans-serif; font-size: 44px; font-weight: 300; color: rgba(255,255,255,0.2); padding-bottom: 20px; }
 
   /* MÓDULOS DE 2 COLUMNAS */
-  .two-col-wrapper { background: #f7f4f0; }
+  .two-col-wrapper { background: #efe9e0; }
   @media (min-width: 769px) { .two-col-wrapper { padding: 40px 48px; } }
 
   /* DONDE NOS VEMOS (texto + foto finca) */
   .section-venue { display: grid; grid-template-columns: 1fr 1fr; min-height: 420px; overflow: hidden; border-radius: 2px; }
   @media (max-width: 768px) { .section-venue { grid-template-columns: 1fr; } }
-  .venue-text { background: #f7f4f0; padding: 48px 40px; display: flex; flex-direction: column; justify-content: center; }
+  .venue-text { background: #efe9e0; padding: 48px 40px; display: flex; flex-direction: column; justify-content: center; }
   .venue-title { font-family: 'Quicksand', sans-serif; font-size: 28px; font-weight: 500; color: #2a2a2a; margin-bottom: 8px; }
   .venue-subtitle { font-family: 'Quicksand', sans-serif; font-size: 17px; font-weight: 400; color: #777; margin-bottom: 20px; }
   .venue-body { font-family: 'Quicksand', sans-serif; font-size: 15px; color: #777; line-height: 1.8; }
@@ -182,7 +182,7 @@
   .venue-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
   /* EN EL MOLAR (link a maps) */
-  .section-molar { display: grid; grid-template-columns: 2.2fr 1fr; overflow: hidden; background: #f7f4f0; align-items: center; gap: 24px; }
+  .section-molar { display: grid; grid-template-columns: 2.2fr 1fr; overflow: hidden; background: #efe9e0; align-items: center; gap: 24px; }
   @media (max-width: 768px) { .section-molar { grid-template-columns: 1fr; gap: 0; } }
   .molar-text { padding: 40px 40px; display: flex; flex-direction: column; justify-content: center; }
   @media (min-width: 769px) { .molar-text { padding: 32px 0 32px 56px; } }
@@ -198,7 +198,7 @@
   .molar-link:hover { color: #c25a32; }
 
   /* COMO LLEGAR */
-  .section-howto { padding: 44px 20px; background: #f7f4f0; text-align: left; max-width: 720px; margin: 0 auto; }
+  .section-howto { padding: 44px 20px; background: #efe9e0; text-align: left; max-width: 720px; margin: 0 auto; }
   .howto-title { font-family: 'Quicksand', sans-serif; font-size: 28px; font-weight: 500; color: #2a2a2a; margin-bottom: 28px; text-align: center; }
   .howto-block { margin-bottom: 22px; }
   .howto-block:last-child { margin-bottom: 0; }
@@ -212,7 +212,7 @@
   /* BUSES */
   .section-buses { display: grid; grid-template-columns: 1fr 1fr; overflow: hidden; border-radius: 2px; }
   @media (max-width: 768px) { .section-buses { grid-template-columns: 1fr; } }
-  .buses-info { background: #f7f4f0; padding: 48px 40px; display: flex; flex-direction: column; justify-content: center; }
+  .buses-info { background: #efe9e0; padding: 48px 40px; display: flex; flex-direction: column; justify-content: center; }
   .buses-title { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 300; color: #2a2a2a; margin-bottom: 28px; font-style: italic; }
   .buses-row { display: flex; align-items: baseline; gap: 16px; margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid #ebe7e0; }
   .buses-row:last-of-type { border-bottom: none; margin-bottom: 0; }
@@ -222,7 +222,7 @@
   .buses-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
   /* SAVE THE DATE */
-  .section-savedate { padding: 44px 20px; background: #f7f4f0; text-align: center; }
+  .section-savedate { padding: 44px 20px; background: #efe9e0; text-align: center; }
   .savedate-label { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: #b5a48a; margin-bottom: 24px; }
   .savedate-title { font-family: 'Quicksand', sans-serif; font-size: 32px; font-weight: 500; color: #2a2a2a; margin-bottom: 32px; }
   .video-wrapper { max-width: 720px; margin: 0 auto; border-radius: 4px; overflow: hidden; background: #111; box-shadow: 0 8px 40px rgba(0,0,0,0.12); }
@@ -242,10 +242,10 @@
   .carousel-btn:hover { background: rgba(255,255,255,0.3); }
   .carousel-dots { display: flex; gap: 8px; justify-content: center; margin-top: 16px; }
   .carousel-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.35); cursor: pointer; transition: background 0.2s; }
-  .carousel-dot.active { background: #f7f4f0; }
+  .carousel-dot.active { background: #efe9e0; }
 
   /* CUADERNILLO RUBIO */
-  .section-cuadernillo { padding: 56px 20px; background: #f7f4f0; max-width: 780px; margin: 0 auto; }
+  .section-cuadernillo { padding: 56px 20px; background: #efe9e0; max-width: 780px; margin: 0 auto; }
   .cuadernillo-title { font-family: 'Quicksand', sans-serif; font-size: clamp(22px, 4vw, 32px); font-weight: 700; color: #2a2a2a; margin-bottom: 12px; }
   .cuadernillo-intro { font-family: 'Quicksand', sans-serif; font-size: 16px; color: #666; line-height: 1.7; margin-bottom: 36px; }
   .cuadernillo-list { display: flex; flex-direction: column; gap: 24px; }
@@ -254,7 +254,7 @@
   .cuadernillo-item-text { font-family: 'Quicksand', sans-serif; font-size: 15px; color: #666; line-height: 1.7; }
 
   /* INFO ADICIONAL */
-  .section-info { padding: 44px 20px; background: #f7f4f0; text-align: center; }
+  .section-info { padding: 44px 20px; background: #efe9e0; text-align: center; }
   .info-title { font-family: 'Quicksand', sans-serif; font-size: 28px; font-weight: 500; color: #2a2a2a; margin-bottom: 40px; }
   .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); max-width: 700px; margin: 0 auto; gap: 32px; }
   .info-item { text-align: center; }
@@ -314,11 +314,11 @@
 <div id="popup-overlay">
   <div id="popup-card">
     <button id="popup-close" onclick="document.getElementById('popup-overlay').style.display='none'">✕</button>
-    <p class="popup-eyebrow">Tenéis el honor de ser invitados a la boda de</p>
+    <p class="popup-eyebrow">¡Nos casamos!</p>
     <div class="popup-names">Pablo & Cati</div>
     <div class="popup-date">29 · 08 · 2026 &nbsp;·&nbsp; 12:30 h</div>
     <div class="popup-divider"></div>
-    <p class="popup-text">Con todo nuestro amor os invitamos a compartir con nosotros el día más especial de nuestras vidas. Vuestra presencia hará este momento inolvidable.</p>
+    <p class="popup-text">Con todo nuestro cariño, te invitamos a compartir con nosotros un día que siempre vamos a recordar. ¡Empieza la cuenta atrás!</p>
     <button class="popup-btn" onclick="document.getElementById('popup-overlay').style.display='none'">Ver nuestra boda →</button>
   </div>
 </div>
@@ -331,7 +331,7 @@
     <div class="hero-names">Pablo & Cati</div>
     <div class="hero-date-bar">
       <span class="hero-date-line"></span>
-      <span class="hero-date-text">29 · 08 · 2026</span>
+      <span class="hero-date-text">29 · 08 · 2026 &nbsp;·&nbsp; 12:30h</span>
       <span class="hero-date-line"></span>
     </div>
   </div>
@@ -421,7 +421,7 @@
   <p class="savedate-label">Save the date</p>
   <h3 class="savedate-title">Guarda este día en tu corazón</h3>
   <div class="video-wrapper">
-    <video controls playsinline poster="img/HeroBanner.jpeg">
+    <video controls playsinline preload="metadata">
       <source src="img/BODA GRUTAL.mp4" type="video/mp4">
     </video>
   </div>
