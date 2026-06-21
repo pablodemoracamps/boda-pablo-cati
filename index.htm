@@ -112,7 +112,7 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding: 90px 20px 28px;
+      padding: 110px 20px 36px;
     }
   }
   .hero-overlay { position: absolute; inset: 0; background: rgba(20,12,5,0.48); }
@@ -351,6 +351,13 @@
     white-space: nowrap; animation: pulse 5s ease-in-out infinite;
   }
   #sticky-btn:hover { background: #a34828; transform: translateX(-50%) translateY(-2px) scale(1.02); }
+
+  /* MOBILE HERO SPACING OVERRIDE (placed last to win cascade) */
+  @media (max-width: 768px) {
+    .hero-eyebrow { margin-bottom: 0; }
+    .hero-names { margin-bottom: 0; }
+    .hero-date-bar { margin-top: 0; }
+  }
 </style>
 </head>
 <body>
