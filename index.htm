@@ -250,7 +250,44 @@
   .carousel-dot.active { background: #efe9e0; }
 
   /* CUADERNILLO RUBIO */
-  .section-cuadernillo { padding: 56px 20px; background: #efe9e0; max-width: 780px; margin: 0 auto; }
+  .section-cuadernillo {
+    padding: 56px 20px 56px 76px;
+    background-color: #FBF3D9;
+    background-image:
+      repeating-linear-gradient(
+        to bottom,
+        transparent,
+        transparent 38px,
+        rgba(180, 150, 90, 0.16) 38px,
+        rgba(180, 150, 90, 0.16) 39px
+      ),
+      linear-gradient(to right, rgba(194,90,50,0.18) 56px, rgba(194,90,50,0.18) 57px, transparent 57px);
+    background-position: 0 12px, 0 0;
+    position: relative;
+  }
+  .cuadernillo-inner { max-width: 780px; margin: 0 auto; position: relative; }
+  .cuadernillo-holes {
+    position: absolute;
+    left: 26px;
+    top: 56px;
+    bottom: 56px;
+    width: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .cuadernillo-holes span {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #fff;
+    border: 1px solid rgba(120,100,60,0.35);
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.08);
+  }
+  @media (max-width: 600px) {
+    .section-cuadernillo { padding: 40px 20px 40px 56px; }
+    .cuadernillo-holes { left: 18px; }
+  }
   .cuadernillo-title { font-family: 'Quicksand', sans-serif; font-size: clamp(22px, 4vw, 32px); font-weight: 700; color: #2a2a2a; margin-bottom: 12px; }
   .cuadernillo-intro { font-family: 'Quicksand', sans-serif; font-size: 16px; color: #666; line-height: 1.7; margin-bottom: 36px; }
   .cuadernillo-list { display: flex; flex-direction: column; gap: 24px; }
@@ -461,6 +498,10 @@
 
 <!-- CUADERNILLO RUBIO -->
 <section class="section-cuadernillo" id="cuadernillo">
+  <div class="cuadernillo-holes">
+    <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+  </div>
+  <div class="cuadernillo-inner">
   <h2 class="cuadernillo-title">El cuadernillo rubio de los Grutus<br><br></h2>
   <p class="cuadernillo-intro">Este verano, vuelven los deberes. Tienes hasta el 29 de agosto para prepararte para un evento grutal.</p>
   <div class="cuadernillo-list">
@@ -488,6 +529,7 @@
       <div class="cuadernillo-item-title">Ejercicio 6 🎤 Dar la chapa nivel experto</div>
       <div class="cuadernillo-item-text">Sabemos que lo de dar discursos es para los más pros. Inspírate en Martin Luther King, en los ganadores de los Oscar o en nuestra amiga May. (Pero este ejercicio claramente suma puntos)</div>
     </div>
+  </div>
   </div>
 </section>
 
@@ -567,4 +609,3 @@
 </script>
 </body>
 </html>
-
